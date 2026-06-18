@@ -1,0 +1,107 @@
+EXAMEN THÉORIQUE - SCIENCES DES DONNÉES
+Questions et Réponses
+========================================
+
+PARTIE 1 - QUESTIONS OUVERTES
+========================================
+
+1- Qu'est-ce que l'algorithme des k-means et à quoi sert-il ?
+Réponse : C'est un algorithme d'apprentissage non supervisé utilisé pour le clustering (regroupement). Il sert à diviser un ensemble de données non étiquetées en k groupes distincts en minimisant la variance intra-cluster.
+
+2- Qu'est-ce que Scikit-Learn ? Quel est le rôle de chaque ligne de code ?
+Code :
+from sklearn.linear_model import LogisticRegression
+lr=LogisticRegression()
+lr.fit(x_train,y_train)
+Réponse : Scikit-Learn est une bibliothèque ML en Python. Ligne 1 : Importe le modèle. Ligne 2 : Instancie l'objet modèle. Ligne 3 : Entraîne le modèle sur les données.
+
+3- À quoi sert ce code ? Pourquoi diviser les données en entraînement et test ?
+Code :
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=1)
+Réponse : Il sépare les données (70% train, 30% test). C'est crucial pour tester le modèle sur des données invisibles lors de l'entraînement afin d'évaluer sa généralisation et éviter l'overfitting.
+
+4- Expliquer le rôle de la fonction d'activation et de la fonction de coût.
+Réponse : Activation : Introduit de la non-linéarité dans le réseau pour modéliser des problèmes complexes. Coût (Loss) : Mesure l'erreur entre la prédiction et la réalité ; l'objectif est de la minimiser.
+
+5- Qu'est-ce que l'apprentissage supervisé ? Donnez un exemple.
+Réponse : Entraînement d'un modèle sur des données étiquetées (on fournit la réponse attendue). Exemple : Détection de spams, prédiction de prix immobiliers.
+
+6- Objectifs de la régression logistique et fonction de coût utilisée ?
+Réponse : Objectif : Classification binaire (prédire une probabilité d'appartenance à une classe). Fonction de coût : Log Loss (Binary Cross-Entropy).
+
+7- Comment effectuer la normalisation des données avec sklearn ?
+Réponse : En utilisant sklearn.preprocessing (ex: StandardScaler ou MinMaxScaler). On applique .fit_transform() sur les données de train, et .transform() sur les tests.
+
+8- Définissez 'feature engineering'. Pourquoi est-il important ?
+Réponse : Création, transformation ou sélection de variables pertinentes à partir de données brutes. Important car la qualité des features impacte directement la performance du modèle.
+
+9- Définissez une matrice de confusion.
+Réponse : Tableau évaluant les performances d'un modèle de classification en affichant les Vrais Positifs (TP), Vrais Négatifs (TN), Faux Positifs (FP) et Faux Négatifs (FN).
+
+10- Quelles sont les étapes de l'EDA et les techniques de visualisation ?
+Réponse : Étapes : Collecte, nettoyage, analyse univariée et bivariée. Techniques : Histogrammes, boxplots, nuages de points, matrices de corrélation (heatmaps).
+
+
+PARTIE 2 - QUESTIONS À CHOIX MULTIPLES (QCM)
+========================================
+
+11- Une société souhaite prédire la probabilité qu'un client achète un produit en ligne. Est-ce une régression ou une classification ?
+   a) C'est un problème de régression
+   b) C'est un problème de classification ✔ (Bonne réponse)
+Explication : La cible finale est catégorielle (Achat ou Non-achat), c'est donc de la classification.
+
+12- Quel type de problème concerne la prédiction de valeurs continues ?
+   a) Classification
+   b) Prédiction (Régression) ✔ (Bonne réponse)
+   c) Clustering
+   d) Dimensionnalité réduite
+Explication : La régression (souvent appelée prédiction) estime une valeur numérique continue (ex: un prix).
+
+13- Qu'est-ce que la méthode du coude (elbow) dans K-means ?
+   a) Mesurer la distance entre clusters
+   b) Déterminer le nombre optimal de clusters ✔ (Bonne réponse)
+   c) Initialiser les centres
+Explication : On trace la variance en fonction de K et on cherche le point d'inflexion (le 'coude').
+
+14- Quelle fonction évalue un modèle de classification binaire ?
+   a) confusion_matrix() ou accuracy_score() ✔ (Bonne réponse)
+   b) mean_squared_error()
+Explication : MSE est pour la régression. Accuracy et la matrice de confusion sont pour la classification.
+
+15- Quel package Python charge des jeux de données structurés ?
+   a) Pandas ✔ (Bonne réponse)
+   b) TensorFlow
+   c) Scikit-image
+Explication : Pandas (avec les DataFrames) est l'outil standard pour la donnée tabulaire en Python.
+
+16- Modèle qui apprend trop bien les données d'entraînement ?
+   a) Underfitting
+   b) Overfitting ✔ (Bonne réponse)
+   c) Generalization
+Explication : Le surapprentissage (overfitting) se produit quand le modèle mémorise le bruit au lieu des tendances générales.
+
+17- Qu'est-ce que la normalisation ?
+   a) Transformer les données dans une plage (ex: 0 et 1) ✔ (Bonne réponse)
+   b) Supprimer les valeurs aberrantes
+   c) Diviser en train/test
+Explication : Elle met les variables sur la même échelle pour éviter qu'une variable ne domine les autres.
+
+18- Qu'est-ce que la descente de gradient ?
+   a) Calcul de corrélation
+   b) Algorithme d'optimisation ✔ (Bonne réponse)
+   c) Technique de prétraitement
+Explication : Il trouve les paramètres optimaux en minimisant itérativement la fonction de coût.
+
+19- Format pour stocker des données structurées ?
+   a) JSON
+   b) CSV
+   c) XML
+   d) Tous les formats ci-dessus ✔ (Bonne réponse)
+Explication : Bien que CSV soit fréquent, JSON et XML structurent également très bien la donnée.
+
+20- Dans une régression, quelle est la variable expliquée (cible) ?
+   a) Variable indépendante
+   b) Variable dépendante ✔ (Bonne réponse)
+   c) Variable binaire
+Explication : La cible (y) dépend des caractéristiques d'entrée (x), d'où son nom.
